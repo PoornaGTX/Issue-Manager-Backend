@@ -21,7 +21,7 @@ Additionally, the tool features filters for categorizing tasks into "Personal" a
 - **express-async-errors** - Middleware to handle asynchronous errors in Express.js.
 - **bcryptjs** - Library for hashing passwords securely.
 - **dotenv** - Module for loading environment variables from a `.env` file into `process.env`.
-- **morgan** - Integrated to display visually appealing loading spinners during asynchronous operations or data fetching.
+- **morgan** - HTTP request logger middleware for Node.js.
 - **cors** - Middleware for enabling Cross-Origin Resource Sharing (CORS) in Express.js.
 - **nodemon** - Utility that automatically restarts the server when code changes occur during development.
 - **validator** - Library for validating and sanitizing strings such as emails, URLs, and others.
