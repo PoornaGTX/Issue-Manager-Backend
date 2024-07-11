@@ -12,7 +12,7 @@ Additionally, the tool features filters for categorizing tasks into "Personal" a
 **Database** - MongoDB
 
 
-## Packages Used in backend
+## Packages Used in Backend
 
 - **TypeScript** - Leveraged for type-safe JavaScript development.
 - **Express** - Used as the core backend framework.
