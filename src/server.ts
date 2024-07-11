@@ -3,12 +3,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 import 'express-async-errors';
 import cors from 'cors';
-
 import morgan from 'morgan';
-
 import connectDB from './db/connect';
 
-// routers
+// routes
 import authRouter from './routes/authRoutes';
 import issueRouter from './routes/issueRoutes';
 import userRouter from './routes/usersRoutes';

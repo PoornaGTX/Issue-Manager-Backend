@@ -117,7 +117,7 @@ const deleteIssue = async (req: MyRequest, res: Response) => {
 };
 
 const issuePriorityStats = async (req: MyRequest, res: Response) => {
-  const stats = await Issue.aggregate([
+  const priorities = await Issue.aggregate([
     {
       $group: {
         _id: '$priority',
@@ -133,7 +133,23 @@ const issuePriorityStats = async (req: MyRequest, res: Response) => {
     },
   ]);
 
-  res.status(OK).json({ stats });
+  const statuses = await Issue.aggregate([
+    {
+      $group: {
+        _id: '$status',
+        count: { $sum: 1 },
+      },
+    },
+    {
+      $project: {
+        _id: 0,
+        status: '$_id',
+        count: 1,
+      },
+    },
+  ]);
+
+  res.status(200).json({ priorities, statuses });
 };
 
 export { createIssue, getAllIssues, getIssue, updateIssue, deleteIssue, issuePriorityStats };

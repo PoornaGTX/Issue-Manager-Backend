@@ -13,7 +13,7 @@ const IssueSchema = new mongoose.Schema<issueType>(
     },
     status: {
       type: String,
-      enum: ['Open', 'In Progress', 'Testing'],
+      enum: ['Open', 'In Progress', 'Testing', 'Close'],
       required: [true, 'Please provide status'],
     },
     priority: {

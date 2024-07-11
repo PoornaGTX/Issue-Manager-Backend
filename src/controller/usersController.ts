@@ -1,7 +1,7 @@
 import User from '../models/User';
 import { Request, Response } from 'express';
-import { BadRequestError, UnAuthenticatedError, NotFoundError } from '../errors/index';
-import { CREATED, OK } from '../utils/statuscodes';
+import { BadRequestError, NotFoundError } from '../errors/index';
+import { OK } from '../utils/statuscodes';
 
 const getUsersByCompany = async (req: Request, res: Response) => {
   const { company } = req.query;

@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema<userModelType>(
       type: String,
       minlength: 3,
       maxlength: 40,
-      required: [true, 'Please provide position name'],
+      required: [true, 'Please provide position'],
     },
     password: {
       type: String,
@@ -44,7 +44,6 @@ const UserSchema = new mongoose.Schema<userModelType>(
   { timestamps: true }
 );
 
-//password hashing
 UserSchema.pre('save', async function () {
   if (!this.isModified('password')) return;
   const salt = await bcrypt.genSalt(10);
@@ -53,7 +52,6 @@ UserSchema.pre('save', async function () {
   }
 });
 
-//JWT
 UserSchema.methods.createJWT = function () {
   if (!process.env.JWT_SECRET || !process.env.JWT_LIFETIME) {
     throw new Error('JWT secret or lifetime not defined in environment variables.');
