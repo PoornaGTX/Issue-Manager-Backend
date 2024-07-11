@@ -32,9 +32,7 @@ Install my-project with npm
 
 ```bash
 01. run 'npm install' command
-02. Navigate to the src/utils/consts.js file in your project directory.
-03. Locate the BASE_URL constant in the file.
-04. Update the BASE_URL constant with the URL of your locally running backend API.
-05. run 'npm start' command
+02. run 'npm start' command
+
 ```
     
