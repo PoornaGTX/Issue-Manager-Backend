@@ -1,5 +1,4 @@
 import express from 'express';
-const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
 import 'express-async-errors';
@@ -19,6 +18,7 @@ import errorHandlerMiddleware from './middleware/error-handler';
 import notFoundMiddleware from './middleware/not-found';
 import authenticateUser from './middleware/auth';
 
+const app = express();
 app.use(cors());
 
 const port = process.env.PORT || 5000;
